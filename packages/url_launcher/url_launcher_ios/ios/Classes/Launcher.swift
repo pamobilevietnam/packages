@@ -13,7 +13,7 @@ protocol Launcher {
   func open(
     _ url: URL,
     options: [UIApplication.OpenExternalURLOptionsKey: Any],
-    completionHandler completion: ((Bool) -> Void)?)
+    completionHandler completion: (@MainActor @Sendable (Bool) -> Void)?)
 }
 
 /// Launcher is intentionally a direct passthroguh to UIApplication.
